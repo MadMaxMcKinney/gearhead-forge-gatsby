@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 import Button from './Button';
 
@@ -24,10 +24,21 @@ export default function Hero() {
                 the flame of V8’s and hot rodding alive by building uniquely
                 aggressive cars and forging a lifestyle.
             </HeroDescription>
-            <Button text="View Latest Content" onClick={heroAction} />
+            <HeroAction>
+                <Button text="View Latest Content" onClick={heroAction} />
+            </HeroAction>
         </HeroContainer>
     );
 }
+
+const fadeIn = keyframes`
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+`;
 
 const HeroContainer = styled.div`
     width: 100%;
@@ -47,14 +58,21 @@ const HeroContainer = styled.div`
 const HeroHeader = styled.h1`
     color: var(--accent-color);
     margin-bottom: 40px;
+    animation: ${fadeIn} 1s;
 `;
 
 const HeroSubHeader = styled.h2`
     color: var(--accent-color);
+    animation: ${fadeIn} 0.5s;
 `;
 
 const HeroDescription = styled.p`
     line-height: 2.6rem;
     max-width: 415px;
     margin-bottom: 48px;
+    animation: ${fadeIn} 2s;
+`;
+
+const HeroAction = styled.div`
+    animation: ${fadeIn} 2.2s;
 `;

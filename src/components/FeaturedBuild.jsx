@@ -2,11 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import propTypes from 'prop-types';
 
-import featuredImage from '../images/featured.jpg';
-
 const FeaturedBuild = props => {
     return (
-        <FeaturedBuildContainer>
+        <FeaturedBuildContainer imageUrl={props.imageUrl}>
             <FeaturedBuildTitleContainer>
                 <FeaturedBuildSubTitle>{props.subTitle}</FeaturedBuildSubTitle>
                 <FeaturedBuildTitle>{props.title}</FeaturedBuildTitle>
@@ -16,7 +14,7 @@ const FeaturedBuild = props => {
 };
 
 const FeaturedBuildContainer = styled.div`
-    background: url(${featuredImage});
+    background: url(${props => props.imageUrl});
     background-size: cover;
     background-position: center;
     height: 570px;

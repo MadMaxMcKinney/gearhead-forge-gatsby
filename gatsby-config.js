@@ -27,6 +27,14 @@ module.exports = {
                 icon: `src/images/gearhead-favicon.png`, // This path is relative to the root of the site.
             },
         },
+        {
+            resolve: `gatsby-source-youtube-v2`,
+            options: {
+                channelId: 'UCsP9zJIz13RyxYgBW1-M-zw',
+                apiKey: 'AIzaSyDou3FmfZosXU8d7raQ4gx2NyW8qaUj4k0',
+                maxVideos: 3, // Defaults to 50
+            },
+        },
         // this (optional) plugin enables Progressive Web App + Offline functionality
         // To learn more, visit: https://gatsby.dev/offline
         // `gatsby-plugin-offline`,

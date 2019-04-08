@@ -2,15 +2,25 @@ import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { GPTall, GLabel, GSmallLabel } from '../design/typography';
-
-import thumbnailImage from '../images/thumb.jpg';
+import moment from 'moment';
 
 const NewsGridItem = props => {
+    // If limit words is true, only keep the first 45 words, and append "..." to the end.
+    const content = props.limitWords
+        ? props.content
+              .split(/\s+/)
+              .slice(0, 45)
+              .join(' ')
+              .concat('...')
+        : props.content;
+
+    const date = parseDateFormat(props.date);
+
     return (
         <GridItemContainer>
             <GridItem>
                 <GridItemMetaContainer>
-                    <GLabel>{props.date}</GLabel>
+                    <GLabel>{date}</GLabel>
                     <MetaService>
                         <GSmallLabel>{props.service}</GSmallLabel>
                     </MetaService>
@@ -22,15 +32,21 @@ const NewsGridItem = props => {
                     {props.imageUrl && (
                         <GridItemFeaturedImage src={props.imageUrl} />
                     )}
-                    <GPTall>{props.content}</GPTall>
+                    <GPTall>{content}</GPTall>
                 </GridItemContentContainer>
                 <GridItemReadMore href={props.readMoreLink}>
-                    <GLabel>Read more</GLabel>
+                    <GLabel>View more</GLabel>
                 </GridItemReadMore>
             </GridItem>
         </GridItemContainer>
     );
 };
+
+function parseDateFormat(dateToFormat) {
+    const milisecs = Date.parse(dateToFormat);
+    const newDateFormat = new Date(milisecs);
+    return moment(newDateFormat).format('MMMM D');
+}
 
 const GridItemContainer = styled.div`
     justify-content: center;
@@ -89,6 +105,7 @@ NewsGridItem.propTypes = {
     title: PropTypes.string,
     imageUrl: PropTypes.string,
     content: PropTypes.string,
+    limitWords: PropTypes.bool,
     readMoreLink: PropTypes.string,
 };
 
