@@ -58,6 +58,11 @@ const GridItem = styled.div`
     display: flex;
     flex-direction: column;
     max-width: 350px;
+
+    @media (max-width: 790px) {
+        max-width: 100%;
+        padding: 0px 40px;
+    }
 `;
 
 const GridItemMetaContainer = styled.div`
@@ -87,6 +92,9 @@ const GridItemFeaturedImage = styled.img`
     height: 200px;
     object-fit: cover;
     margin-bottom: 24px;
+    @media (max-width: 790px) {
+        width: 100%;
+    }
 `;
 
 const GridItemReadMore = styled.a`

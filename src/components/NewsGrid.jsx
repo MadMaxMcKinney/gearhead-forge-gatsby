@@ -31,6 +31,22 @@ const NewsGridContainer = styled.div`
     > *:nth-child(3) {
         grid-area: thirdItem;
     }
+    @media (max-width: 790px) {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            'firstItem'
+            'secondItem'
+            'thirdItem';
+        grid-gap: 40px;
+        padding-top: 40px;
+        padding-bottom: 40px;
+        > *:first-child {
+            border-right: none;
+        }
+        > *:nth-child(2) {
+            border-bottom: none;
+        }
+    }
 `;
 
 export default NewsGrid;
