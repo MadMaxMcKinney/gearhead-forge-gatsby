@@ -36,6 +36,20 @@ module.exports = {
                 maxVideos: 3, // Defaults to 50
             },
         },
+        {
+            resolve: `gatsby-source-twitter`,
+            options: {
+                q: `@GearheadForge`,
+                credentials: {
+                    consumer_key: 'i6I5QjJ01DRIA0iCM0ENwXyQ1',
+                    consumer_secret:
+                        'CQTuwaLvsWy20iFROAAwPMu3rFGO10zP1uaX8F4mjoq1BoP5TA',
+                    bearer_token:
+                        'AAAAAAAAAAAAAAAAAAAAACFF9wAAAAAAVVhd4Di7mIzh7BhmQgHyAp09is0%3DwX0g3Ua8HdC7LtLMxc0kWKXRHHvJul28aWet3gGzYbHstSLBVN',
+                },
+                tweet_mode: 'extended',
+            },
+        },
         // this (optional) plugin enables Progressive Web App + Offline functionality
         // To learn more, visit: https://gatsby.dev/offline
         // `gatsby-plugin-offline`,

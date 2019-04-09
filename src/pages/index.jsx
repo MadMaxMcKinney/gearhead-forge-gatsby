@@ -1,6 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import SEO from '../components/seo';
+import SEO from '../components/Seo';
 
 import Layout from '../components/Layout';
 import Navbar from '../components/Navbar';
@@ -19,7 +19,7 @@ const IndexPage = ({ data }) => {
 
     return (
         <Layout>
-            <SEO title="Home" keywords={[`car`, `hotrod`, `racing`]} />
+            <SEO title="" keywords={[`car`, `hotrod`, `racing`]} />
 
             <Navbar />
             <Hero />
