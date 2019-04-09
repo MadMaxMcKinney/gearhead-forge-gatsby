@@ -32,6 +32,7 @@ const NewsGridContainer = styled.div`
         grid-area: thirdItem;
     }
     @media (max-width: 790px) {
+        height: initial;
         grid-template-columns: 1fr;
         grid-template-areas:
             'firstItem'
