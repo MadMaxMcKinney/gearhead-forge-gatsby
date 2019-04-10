@@ -39,7 +39,7 @@ module.exports = {
         {
             resolve: `gatsby-source-twitter`,
             options: {
-                q: `@gearheadforge`,
+                q: `from:gearheadforge`,
                 credentials: {
                     consumer_key: 'i6I5QjJ01DRIA0iCM0ENwXyQ1',
                     consumer_secret:

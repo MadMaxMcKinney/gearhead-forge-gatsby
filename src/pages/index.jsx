@@ -15,7 +15,7 @@ import featuredImage from '../images/featured.jpg';
 
 const IndexPage = ({ data }) => {
     const videos = data.allYoutubeVideo.edges;
-    const tweets = '';
+    const tweets = data.allTweet.edges;
 
     return (
         <Layout>
@@ -36,10 +36,10 @@ const IndexPage = ({ data }) => {
                     limitWords
                 />
                 <NewsGridItem
-                    date="March 29th"
+                    date={tweets[0].node.created_at}
                     service="Twitter"
-                    content="We are a group of enthusiasts passionately keeping the flame of V8’s and hot rodding alive by building uniquely aggressive cars and forging a lifestyle."
-                    readMoreLink="https://www.youtube.com/watch?v=FjBrz5H0MSc"
+                    content={tweets[0].node.full_text}
+                    readMoreLink="https://twitter.com/GearheadForge"
                 />
                 <NewsGridItem
                     date={videos[1].node.publishedAt}
@@ -71,15 +71,10 @@ const IndexPage = ({ data }) => {
                     limitWords
                 />
                 <NewsGridItem
-                    date={videos[0].node.publishedAt}
-                    service="YouTube"
-                    title={videos[0].node.title}
-                    imageUrl={videos[0].node.thumbnail.url}
-                    content={videos[0].node.description}
-                    readMoreLink={`https://www.youtube.com/watch?v=${
-                        videos[0].node.videoId
-                    }`}
-                    limitWords
+                    date={tweets[0].node.created_at}
+                    service="Twitter"
+                    content={tweets[0].node.full_text}
+                    readMoreLink="https://twitter.com/GearheadForge"
                 />
                 <NewsGridItem
                     date={videos[1].node.publishedAt}
@@ -110,6 +105,14 @@ export const query = graphql`
                     description
                     videoId
                     publishedAt
+                }
+            }
+        }
+        allTweet {
+            edges {
+                node {
+                    full_text
+                    created_at
                 }
             }
         }
