@@ -52,6 +52,9 @@ const GridItemContainer = styled.div`
     justify-content: center;
     align-items: center;
     display: flex;
+    @media (max-width: 790px) {
+        justify-content: flex-start;
+    }
 `;
 
 const GridItem = styled.div`
