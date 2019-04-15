@@ -58,7 +58,7 @@ const IndexPage = ({ data }) => {
                 subTitle="Latest Build"
                 imageUrl={featuredImage}
             />
-            <NewsGrid>
+            <NewsGrid flipped>
                 <NewsGridItem
                     date={videos[0].node.publishedAt}
                     service="YouTube"

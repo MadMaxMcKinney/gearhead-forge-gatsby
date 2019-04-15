@@ -3,7 +3,16 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
 const NewsGrid = props => {
-    return <NewsGridContainer>{props.children}</NewsGridContainer>;
+    return (
+        (props.flipped === false && (
+            <NewsGridContainer>{props.children}</NewsGridContainer>
+        )) ||
+        (props.flipped === true && (
+            <NewsGridContainerFlipped>
+                {props.children}
+            </NewsGridContainerFlipped>
+        ))
+    );
 };
 
 const NewsGridContainer = styled.div`
@@ -49,5 +58,23 @@ const NewsGridContainer = styled.div`
         }
     }
 `;
+
+const NewsGridContainerFlipped = styled(NewsGridContainer)`
+    grid-template-areas:
+        'secondItem firstItem'
+        'thirdItem firstItem'
+        'thirdItem firstItem';
+    > *:first-child {
+        border-left: 1px solid #2a2a2a;
+    }
+`;
+
+NewsGrid.defaultProps = {
+    flipped: false,
+};
+
+NewsGrid.propTypes = {
+    flipped: PropTypes.bool.isRequired,
+};
 
 export default NewsGrid;

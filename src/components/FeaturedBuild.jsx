@@ -17,7 +17,7 @@ const FeaturedBuildContainer = styled.div`
     background: url(${props => props.imageUrl});
     background-size: cover;
     background-position: center;
-    height: 570px;
+    height: 650px;
     display: flex;
     position: relative;
     padding: 36px;
