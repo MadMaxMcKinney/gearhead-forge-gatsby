@@ -1,7 +1,9 @@
 module.exports = {
     siteMetadata: {
         title: `Gearhead Forge`,
-        description: `We are a group of enthusiasts passionately keeping the flame of V8’s and hot rodding alive by building uniquely aggressive cars and forging a lifestyle.`,
+        description: `Gearhead Forge is a group of enthusiasts passionately keeping
+        the flame of hot rodding alive by building uniquely aggressive
+        cars and forging a lifestyle.`,
         author: `Gearhead Forge`,
     },
     plugins: [

@@ -21,8 +21,8 @@ export default function Hero() {
             <HeroHeader>The Glorious Thunder</HeroHeader>
             <HeroDescription>
                 Gearhead Forge is a group of enthusiasts passionately keeping
-                the flame of V8’s and hot rodding alive by building uniquely
-                aggressive cars and forging a lifestyle.
+                the flame of hot rodding alive by building uniquely aggressive
+                cars and forging a lifestyle.
             </HeroDescription>
             <HeroAction>
                 <Button text="View Latest Content" onClick={heroAction} />
