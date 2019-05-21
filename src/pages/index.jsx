@@ -6,7 +6,7 @@ import Layout from '../components/Layout';
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import NewsGrid from '../components/NewsGrid';
-import NewsLetterRow from '../components/NewsLetterRow';
+import NewsletterRow from '../components/NewsLetterRow';
 import FeaturedBuild from '../components/FeaturedBuild';
 import Footer from '../components/Footer';
 
@@ -54,7 +54,7 @@ const IndexPage = ({ data }) => {
                     limitWords
                 />
             </NewsGrid>
-            <NewsLetterRow />
+            <NewsletterRow />
             <FeaturedBuild
                 title="The Forged ST"
                 subTitle="Latest Build"

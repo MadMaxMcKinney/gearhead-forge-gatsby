@@ -47,6 +47,7 @@ const NewsGridContainer = styled.div`
             'firstItem'
             'secondItem'
             'thirdItem';
+        grid-template-rows: min-content;
         grid-gap: 40px;
         padding-top: 40px;
         padding-bottom: 40px;
