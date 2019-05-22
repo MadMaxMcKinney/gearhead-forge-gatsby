@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { StaticQuery, graphql } from 'gatsby';
+import { StaticQuery, graphql, Link } from 'gatsby';
 import Img from 'gatsby-image';
 
 export default () => (
@@ -19,7 +19,7 @@ export default () => (
         render={data => (
             <NavContainer>
                 <NavLogoContainer>
-                    <Img fixed={data.file.childImageSharp.fixed} />
+                    <Link to="/"><Img fixed={data.file.childImageSharp.fixed} /></Link>
                 </NavLogoContainer>
                 <NavItem>The Lifestyle</NavItem>
                 <NavItem>The Forge</NavItem>
@@ -43,6 +43,9 @@ const NavContainer = styled.div`
 const NavItem = styled.h6`
     font-size: 1.5rem;
     padding-left: 40px;
+    @media (max-width: 710px) {
+        display: none;
+    }
 `;
 
 const NavLogoContainer = styled.div`

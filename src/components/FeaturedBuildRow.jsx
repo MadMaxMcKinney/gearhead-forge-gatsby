@@ -1,14 +1,19 @@
 import React from 'react';
 import styled from 'styled-components';
-import propTypes from 'prop-types';
+import { Link } from 'gatsby';
+import PropTypes from 'prop-types';
 
-const FeaturedBuild = props => {
+const FeaturedBuildRow = props => {
     return (
         <FeaturedBuildContainer imageUrl={props.imageUrl}>
-            <FeaturedBuildTitleContainer>
-                <FeaturedBuildSubTitle>{props.subTitle}</FeaturedBuildSubTitle>
-                <FeaturedBuildTitle>{props.title}</FeaturedBuildTitle>
-            </FeaturedBuildTitleContainer>
+            <FeaturedBuildLink to={props.link}>
+                <FeaturedBuildTitleContainer>
+                    <FeaturedBuildSubTitle>
+                        {props.subTitle}
+                    </FeaturedBuildSubTitle>
+                    <FeaturedBuildTitle>{props.title}</FeaturedBuildTitle>
+                </FeaturedBuildTitleContainer>
+            </FeaturedBuildLink>
         </FeaturedBuildContainer>
     );
 };
@@ -45,15 +50,33 @@ const FeaturedBuildTitleContainer = styled.div`
 
 const FeaturedBuildSubTitle = styled.h4`
     color: var(--light-gray-color);
+    transition: color 0.3s;
 `;
 
 const FeaturedBuildTitle = styled.h1`
     color: var(--white-color);
 `;
 
-FeaturedBuild.propTypes = {
-    subTitle: propTypes.string,
-    title: propTypes.string,
+const FeaturedBuildLink = styled(Link)`
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    z-index: 1000;
+
+    &:hover {
+        opacity: 1;
+    }
+
+    &:hover ${FeaturedBuildSubTitle} {
+        color: var(--accent-color);
+    }
+`;
+
+FeaturedBuildRow.propTypes = {
+    subTitle: PropTypes.string,
+    title: PropTypes.string,
+    imageUrl: PropTypes.string,
+    link: PropTypes.string,
 };
 
-export default FeaturedBuild;
+export default FeaturedBuildRow;

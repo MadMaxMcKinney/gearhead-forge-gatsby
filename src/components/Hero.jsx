@@ -25,7 +25,11 @@ export default function Hero() {
                 cars and forging a lifestyle.
             </HeroDescription>
             <HeroAction>
-                <Button text="View Latest Content" onClick={heroAction} />
+                <Button
+                    text="View Latest Content"
+                    onClick={heroAction}
+                    type="regular"
+                />
             </HeroAction>
         </HeroContainer>
     );

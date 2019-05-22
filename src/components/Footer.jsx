@@ -27,7 +27,7 @@ const Footer = () => {
 };
 
 const FooterContainer = styled.div`
-    height: 100px;
+    min-height: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
