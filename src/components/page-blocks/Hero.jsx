@@ -1,9 +1,9 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
 
-import Button from './Button';
+import Button from '../Button';
 
-import heroBG from '../images/hero.jpg';
+import heroBG from '../../images/hero.jpg';
 
 export default function Hero() {
     const heroAction = e => {

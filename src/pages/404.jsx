@@ -1,9 +1,9 @@
 import React from 'react';
 import SEO from '../components/seo';
 
-import Layout from '../components/Layout';
-import Navbar from '../components/Navbar';
-import Hero from '../components/Hero';
+import Layout from '../components/page-blocks/Layout';
+import Navbar from '../components/page-blocks/Navbar';
+import Hero from '../components/page-blocks/Hero';
 
 const NotFoundPage = () => (
     <>

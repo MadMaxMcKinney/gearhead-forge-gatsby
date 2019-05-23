@@ -19,7 +19,9 @@ export default () => (
         render={data => (
             <NavContainer>
                 <NavLogoContainer>
-                    <Link to="/"><Img fixed={data.file.childImageSharp.fixed} /></Link>
+                    <Link to="/">
+                        <Img fixed={data.file.childImageSharp.fixed} />
+                    </Link>
                 </NavLogoContainer>
                 <NavItem>The Lifestyle</NavItem>
                 <NavItem>The Forge</NavItem>

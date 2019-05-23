@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 
-const FeaturedBuildRow = props => {
+const FeaturedBuildBlock = props => {
     return (
         <FeaturedBuildContainer imageUrl={props.imageUrl}>
             <FeaturedBuildLink to={props.link}>
@@ -72,11 +72,11 @@ const FeaturedBuildLink = styled(Link)`
     }
 `;
 
-FeaturedBuildRow.propTypes = {
+FeaturedBuildBlock.propTypes = {
     subTitle: PropTypes.string,
     title: PropTypes.string,
     imageUrl: PropTypes.string,
     link: PropTypes.string,
 };
 
-export default FeaturedBuildRow;
+export default FeaturedBuildBlock;

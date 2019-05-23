@@ -2,13 +2,13 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import SEO from '../components/seo';
 
-import Layout, { LayoutContent } from '../components/Layout';
-import Navbar from '../components/Navbar';
-import Hero from '../components/Hero';
-import NewsGrid from '../components/NewsGrid';
-import NewsletterRow from '../components/NewsLetterRow';
-import FeaturedBuildRow from '../components/FeaturedBuildRow';
-import Footer from '../components/Footer';
+import Layout, { LayoutContent } from '../components/page-blocks/Layout';
+import Navbar from '../components/page-blocks/Navbar';
+import Hero from '../components/page-blocks/Hero';
+import NewsGridBlock from '../components/page-blocks/NewsGridBlock';
+import NewsletterBlock from '../components/page-blocks/NewsLetterBlock';
+import FeaturedBuildBlock from '../components/page-blocks/FeaturedBuildBlock';
+import Footer from '../components/page-blocks/Footer';
 
 import NewsGridItem from '../components/NewsGridItem';
 
@@ -25,7 +25,7 @@ const IndexPage = ({ data }) => {
             <Navbar />
             <Hero />
             <LayoutContent>
-                <NewsGrid>
+                <NewsGridBlock>
                     <NewsGridItem
                         date={videos[0].node.publishedAt}
                         service="YouTube"
@@ -54,15 +54,15 @@ const IndexPage = ({ data }) => {
                         }`}
                         limitWords
                     />
-                </NewsGrid>
-                <NewsletterRow />
-                <FeaturedBuildRow
+                </NewsGridBlock>
+                <NewsletterBlock />
+                <FeaturedBuildBlock
                     title="The Forged ST"
                     subTitle="Latest Build"
-                    link="featuredbuild"
+                    link="/builds/thelastst"
                     imageUrl={featuredImage}
                 />
-                <NewsGrid flipped>
+                <NewsGridBlock flipped>
                     <NewsGridItem
                         date={videos[0].node.publishedAt}
                         service="YouTube"
@@ -91,7 +91,7 @@ const IndexPage = ({ data }) => {
                         }`}
                         limitWords
                     />
-                </NewsGrid>
+                </NewsGridBlock>
             </LayoutContent>
             <Footer />
         </Layout>

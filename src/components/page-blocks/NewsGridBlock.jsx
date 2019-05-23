@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
-const NewsGrid = props => {
+const NewsGridBlock = props => {
     return (
         (props.flipped === false && (
             <NewsGridContainer>{props.children}</NewsGridContainer>
@@ -70,12 +70,12 @@ const NewsGridContainerFlipped = styled(NewsGridContainer)`
     }
 `;
 
-NewsGrid.defaultProps = {
+NewsGridBlock.defaultProps = {
     flipped: false,
 };
 
-NewsGrid.propTypes = {
+NewsGridBlock.propTypes = {
     flipped: PropTypes.bool.isRequired,
 };
 
-export default NewsGrid;
+export default NewsGridBlock;

@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import { Link } from 'gatsby';
 import styled from 'styled-components';
 import { GH5 } from '../design/typography';
 import Button from './Button';
@@ -6,26 +8,28 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import image from '../images/featured.jpg';
 
-const ArticleBuildItem = () => {
+const ArticleBuildItem = props => {
     return (
         <ArticleBuildItemContainer>
             <ArticleTitleContainer>
-                <GH5>Installing Bigger Turbo</GH5>
+                <GH5>{props.title}</GH5>
                 <ArticleDate>
-                    <p><FontAwesomeIcon icon={['fal', 'calendar']} /></p>
-                    <p>March 20th</p>
+                    <p>
+                        <FontAwesomeIcon icon={['fal', 'calendar']} />
+                    </p>
+                    <p>{props.date}</p>
                 </ArticleDate>
             </ArticleTitleContainer>
             <ArticleImageContainer>
-                <ArticleBuildOrderNumber>#1</ArticleBuildOrderNumber>
+                <ArticleBuildOrderNumber>
+                    #{props.buildNumber}
+                </ArticleBuildOrderNumber>
             </ArticleImageContainer>
             <ArticleContentContainer>
-                <p>
-                    The best way to make more power is with a bigger turbo.
-                    Follow along as we bring the stock 250hp to a whopping
-                    400whp!
-                </p>
-                <Button text="View Details" type="secondary" size="small" />
+                <p>{props.excerpt}</p>
+                <ArticleLink to={props.link}>
+                    <Button text="View Details" type="secondary" size="small" />
+                </ArticleLink>
             </ArticleContentContainer>
         </ArticleBuildItemContainer>
     );
@@ -86,6 +90,10 @@ const ArticleBuildOrderNumber = styled.h1`
     z-index: 10;
 `;
 
+const ArticleLink = styled(Link)`
+    justify-self: end;
+`;
+
 const ArticleContentContainer = styled.div`
     margin-top: 24px;
     width: 100%;
@@ -102,5 +110,13 @@ const ArticleContentContainer = styled.div`
         grid-gap: 24px;
     }
 `;
+
+ArticleBuildItem.propTypes = {
+    title: PropTypes.string.isRequired,
+    date: PropTypes.string.isRequired,
+    excerpt: PropTypes.string.isRequired,
+    buildNumber: PropTypes.string.isRequired,
+    link: PropTypes.string.isRequired,
+};
 
 export default ArticleBuildItem;

@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import { GH1 } from '../design/typography';
+import { GH1 } from '../../design/typography';
 
-import heroBG from '../images/featured.jpg';
+import heroBG from '../../images/featured.jpg';
 
 export default function HeroArticle(props) {
     return (

@@ -52,6 +52,14 @@ module.exports = {
                 tweet_mode: 'extended',
             },
         },
+        {
+            resolve: 'gatsby-source-filesystem',
+            options: {
+                name: 'pages',
+                path: `${__dirname}/src/pages/`,
+            },
+        },
+        'gatsby-transformer-remark',
         // this (optional) plugin enables Progressive Web App + Offline functionality
         // To learn more, visit: https://gatsby.dev/offline
         // `gatsby-plugin-offline`,

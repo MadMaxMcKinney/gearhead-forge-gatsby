@@ -1,15 +1,15 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import SEO from '../components/seo';
+import SEO from '../../components/seo';
 import styled from 'styled-components';
 
-import Layout, { LayoutContent } from '../components/page-blocks/Layout';
-import Navbar from '../components/page-blocks/Navbar';
-import HeroFeatured from '../components/page-blocks/HeroFeatured';
-import ArticleBuildItem from '../components/ArticleBuildItem';
-import Footer from '../components/page-blocks/Footer';
+import Layout, { LayoutContent } from '../../components/page-blocks/Layout';
+import Navbar from '../../components/page-blocks/Navbar';
+import HeroFeatured from '../../components/page-blocks/HeroFeatured';
+import ArticleBuildItem from '../../components/ArticleBuildItem';
+import Footer from '../../components/page-blocks/Footer';
 
-const FeaturedBuildPage = ({ data }) => {
+const FeaturedBuildTheLastST = ({ data }) => {
     let buildPosts = data.allMarkdownRemark.edges;
 
     return (
@@ -23,7 +23,7 @@ const FeaturedBuildPage = ({ data }) => {
             <HeroFeatured title="The Last ST" />
 
             <LayoutContent>
-                <BuildListBlock>
+                <BuildList>
                     {buildPosts.map(post => {
                         let postDetails = post.node;
                         return (
@@ -38,14 +38,14 @@ const FeaturedBuildPage = ({ data }) => {
                             />
                         );
                     })}
-                </BuildListBlock>
+                </BuildList>
             </LayoutContent>
             <Footer />
         </Layout>
     );
 };
 
-const BuildListBlock = styled.div`
+const BuildList = styled.div`
     max-width: 1100px;
     width: 100%;
     margin: 64px auto;
@@ -56,7 +56,7 @@ const BuildListBlock = styled.div`
 `;
 
 export const query = graphql`
-    query BuildQuery {
+    query {
         allMarkdownRemark(
             filter: { frontmatter: { build: { eq: "thelastst" } } }
         ) {
@@ -83,4 +83,4 @@ export const query = graphql`
     }
 `;
 
-export default FeaturedBuildPage;
+export default FeaturedBuildTheLastST;

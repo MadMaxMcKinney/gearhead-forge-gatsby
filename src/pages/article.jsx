@@ -3,10 +3,10 @@ import SEO from '../components/seo';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import Layout, {LayoutContent} from '../components/Layout';
-import Navbar from '../components/Navbar';
-import HeroArticle from '../components/HeroArticle';
-import Footer from '../components/Footer';
+import Layout, { LayoutContent } from '../components/page-blocks/Layout';
+import Navbar from '../components/page-blocks/Navbar';
+import HeroArticle from '../components/page-blocks/HeroArticle';
+import Footer from '../components/page-blocks/Footer';
 
 import profileImage from '../images/profile-max.jpg';
 
@@ -32,15 +32,44 @@ const ArticlePage = () => {
                         </ArticleIconContainer>
                     </ArticleMeta>
                     <ArticleContent>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pretium rhoncus elit, et elementum libero lacinia ut. Nulla dapibus risus quis imperdiet malesuada. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec imperdiet sit amet turpis eget feugiat. Mauris sed consectetur turpis. Etiam eu ultricies ante. Sed sit amet ex convallis, bibendum odio et, laoreet augue.</p>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit. Maecenas pretium rhoncus elit, et elementum
+                            libero lacinia ut. Nulla dapibus risus quis
+                            imperdiet malesuada. Interdum et malesuada fames ac
+                            ante ipsum primis in faucibus. Donec imperdiet sit
+                            amet turpis eget feugiat. Mauris sed consectetur
+                            turpis. Etiam eu ultricies ante. Sed sit amet ex
+                            convallis, bibendum odio et, laoreet augue.
+                        </p>
 
-                        <p>Nulla rhoncus sodales est, vel ornare sem fermentum eu. Proin euismod accumsan enim, malesuada scelerisque libero eleifend ac. Nam tincidunt ac arcu sit amet suscipit. Nulla et massa blandit, rhoncus ligula ut, aliquam lectus. Praesent ultricies risus et rutrum vestibulum. Praesent vitae magna lorem. Maecenas orci sapien, elementum a est vitae, faucibus feugiat tortor. Suspendisse molestie elementum tortor sit amet commodo.</p>
+                        <p>
+                            Nulla rhoncus sodales est, vel ornare sem fermentum
+                            eu. Proin euismod accumsan enim, malesuada
+                            scelerisque libero eleifend ac. Nam tincidunt ac
+                            arcu sit amet suscipit. Nulla et massa blandit,
+                            rhoncus ligula ut, aliquam lectus. Praesent
+                            ultricies risus et rutrum vestibulum. Praesent vitae
+                            magna lorem. Maecenas orci sapien, elementum a est
+                            vitae, faucibus feugiat tortor. Suspendisse molestie
+                            elementum tortor sit amet commodo.
+                        </p>
 
-                        <img src="https://source.unsplash.com/random/1200x800"/>
+                        <img src="https://source.unsplash.com/random/1200x800" />
 
-                        <p>Nulla rhoncus sodales est, vel ornare sem fermentum eu. Proin euismod accumsan enim, malesuada scelerisque libero eleifend ac. Nam tincidunt ac arcu sit amet suscipit. Nulla et massa blandit, rhoncus ligula ut, aliquam lectus. Praesent ultricies risus et rutrum vestibulum. Praesent vitae magna lorem. Maecenas orci sapien, elementum a est vitae, faucibus feugiat tortor. Suspendisse molestie elementum tortor sit amet commodo.</p>
+                        <p>
+                            Nulla rhoncus sodales est, vel ornare sem fermentum
+                            eu. Proin euismod accumsan enim, malesuada
+                            scelerisque libero eleifend ac. Nam tincidunt ac
+                            arcu sit amet suscipit. Nulla et massa blandit,
+                            rhoncus ligula ut, aliquam lectus. Praesent
+                            ultricies risus et rutrum vestibulum. Praesent vitae
+                            magna lorem. Maecenas orci sapien, elementum a est
+                            vitae, faucibus feugiat tortor. Suspendisse molestie
+                            elementum tortor sit amet commodo.
+                        </p>
 
-                        <img src="https://source.unsplash.com/random/1300x800"/>
+                        <img src="https://source.unsplash.com/random/1300x800" />
                     </ArticleContent>
                 </ArticleContentContainer>
             </LayoutContent>
