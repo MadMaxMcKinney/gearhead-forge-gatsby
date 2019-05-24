@@ -3,11 +3,9 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { GH1 } from '../../design/typography';
 
-import heroBG from '../../images/featured.jpg';
-
 export default function HeroArticle(props) {
     return (
-        <HeroContainer>
+        <HeroContainer imageUrl={props.imageUrl}>
             <FeaturedTitleContainer>
                 <GH1>{props.title}</GH1>
             </FeaturedTitleContainer>
@@ -26,7 +24,7 @@ const HeroContainer = styled.div`
     position: relative;
     padding: 40px;
 
-    background-image: url(${heroBG});
+    background-image: url(${props => props.imageUrl});
     background-size: cover;
     background-position: center;
 
@@ -58,4 +56,5 @@ const FeaturedTitleContainer = styled.div`
 
 HeroArticle.propTypes = {
     title: PropTypes.string,
+    imageUrl: PropTypes.string,
 };

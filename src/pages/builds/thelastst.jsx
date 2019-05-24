@@ -15,7 +15,7 @@ const FeaturedBuildTheLastST = ({ data }) => {
     return (
         <Layout>
             <SEO
-                title="Featured Build - The Last ST"
+                title={`Featured Build - The Last ST`}
                 keywords={[`car`, `hotrod`, `racing`]}
             />
 
@@ -32,7 +32,11 @@ const FeaturedBuildTheLastST = ({ data }) => {
                                 buildNumber={
                                     postDetails.frontmatter.buildNumber
                                 }
-                                date="March 20th"
+                                imageUrl={
+                                    postDetails.frontmatter.thumbnail
+                                        .childImageSharp.fluid.src
+                                }
+                                date={postDetails.frontmatter.date}
                                 link="/article"
                                 excerpt={postDetails.excerpt}
                             />
@@ -66,6 +70,7 @@ export const query = graphql`
                     excerpt
                     frontmatter {
                         title
+                        date
                         buildNumber
                         build
                         postType

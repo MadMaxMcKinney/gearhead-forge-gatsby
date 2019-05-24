@@ -20,7 +20,7 @@ const ArticleBuildItem = props => {
                     <p>{props.date}</p>
                 </ArticleDate>
             </ArticleTitleContainer>
-            <ArticleImageContainer>
+            <ArticleImageContainer imageUrl={props.imageUrl}>
                 <ArticleBuildOrderNumber>
                     #{props.buildNumber}
                 </ArticleBuildOrderNumber>
@@ -63,7 +63,7 @@ const ArticleImageContainer = styled.div`
     align-items: center;
     padding: 24px;
     height: 250px;
-    background: url(${image});
+    background: url(${props => props.imageUrl});
     background-size: cover;
     background-position: center;
     border: 1px solid #3f3f3f;
@@ -115,6 +115,7 @@ ArticleBuildItem.propTypes = {
     title: PropTypes.string.isRequired,
     date: PropTypes.string.isRequired,
     excerpt: PropTypes.string.isRequired,
+    imageUrl: PropTypes.string.isRequired,
     buildNumber: PropTypes.string.isRequired,
     link: PropTypes.string.isRequired,
 };

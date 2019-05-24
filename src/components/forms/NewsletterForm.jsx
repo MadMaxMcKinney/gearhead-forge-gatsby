@@ -70,6 +70,7 @@ const Input = styled.input`
     width: 100%;
     background: #161616;
     border: 1px solid transparent;
+    border-radius: 0px;
     color: var(--light-gray-color);
     padding: 0px 16px;
     font-family: 'Roboto';
